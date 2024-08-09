@@ -1,0 +1,187 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    src: url('/location/fonts/montserrat-regular.woff2') format('woff2'),
+    url('/location/fonts/montserrat-regular.woff') format('woff'),
+    url('/location/fonts/montserrat-regular.ttf') format('truetype'); /* Исправлено формат 'ttf' на 'truetype' */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    src: url('/location/fonts/montserrat-black.woff2') format('woff2'),
+    url('/location/fonts/montserrat-black.woff') format('woff'),
+    url('/location/fonts/montserrat-black.ttf') format('truetype'); /* Исправлено формат 'ttf' на 'truetype' */
+    font-display: swap;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+html {
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+.play-regular {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.play-bold {
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #172139;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #FF6600;
+    --bs-yellow: #ffc107;
+    --bs-green: #28a745;
+    --bs-teal: #20c997;
+    --bs-cyan: #17a2b8;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #28a745;
+    --bs-info: #17a2b8;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #F4F4F4;
+    --bs-dark: #343a40;
+    --bs-color:#A5A5A5;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+}
+
+textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+select {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: transparent;
+    caret-color: transparent;
+}
+
+button {
+    all: unset;
+    outline: initial;
+    border: initial;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+img{
+    display: inline-block;
+}
+body {
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    background-color: rgb(244, 244, 244);
+}
+
+main, header {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main {
+    flex-grow: 1;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: 75px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    max-width: 1920px;
+    min-height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+
+/* Медиазапросы */
+@media (max-width: 1920px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1550px) and (max-width: 1920px) {
+    .container {
+        max-width: 1920px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1550px) {
+    .container {
+        max-width: 95%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
