@@ -12,18 +12,55 @@
     font-weight: 700;
     src: url('/location/fonts/montserrat-black.woff2') format('woff2'),
     url('/location/fonts/montserrat-black.woff') format('woff'),
-    url('/location/fonts/montserrat-black.ttf') format('truetype'); /* Исправлено формат 'ttf' на 'truetype' */
+    url('/location/fonts/montserrat-black.ttf') format('truetype');
     font-display: swap;
 }
-
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 300;
+    src: url('/location/fonts/montserrat-thin.ttf') format('truetype'),
+    url('/location/fonts/montserrat-thin.woff') format('woff'),
+    url('/location/fonts/montserrat-thin.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Futura Cyrillic';
+    font-weight: 300; /* Light */
+    src: url('/location/fonts/FuturaCyrillicLight.woff2') format('woff2'),
+    url('/location/fonts/FuturaCyrillicLight.woff') format('woff'),
+    url('/location/fonts/FuturaCyrillicLight.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Futura Cyrillic';
+    font-weight: 500; /* Medium */
+    src: url('/location/fonts/FuturaCyrillicMedium.woff2') format('woff2'),
+    url('/location/fonts/FuturaCyrillicMedium.woff') format('woff'),
+    url('/location/fonts/FuturaCyrillicMedium.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Futura Cyrillic';
+    font-weight: 700;/*bold*/
+    src: url('/location/fonts/FuturaCyrillicBold.woff2') format('woff2'),
+    url('/location/fonts/FuturaCyrillicBold.woff') format('woff'),
+    url('/location/fonts/FuturaCyrillicBold.ttf') format('truetype');
+    font-display: swap;
+}
 html, body {
     min-height: 100vh;
+    box-sizing: border-box;
+
+}
+th {
+    font-weight: normal;
+    background: none;
 }
 
-html {
-    box-sizing: border-box;
-    min-height: 100%;
+tr {
+    background: none;
 }
+
 
 .play-regular {
     font-family: "Play", sans-serif;
@@ -45,7 +82,9 @@ html {
     box-sizing: inherit;
     font-family: 'Montserrat', sans-serif;
 }
-
+img{
+    display: inline-block;
+}
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #172139;
@@ -72,17 +111,18 @@ html {
     --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --font-light: 'Futura Cyrillic', sans-serif;
+    --font-medium: 'Futura Cyrillic', sans-serif;
+    --font-bold: 'Futura Cyrillic', sans-serif;
+    --font-thin: 'Montserrat', sans-serif;
+
+}
+/* Hide the default checkbox */
+ input[type="checkbox"] {
+    display: none;
 }
 
-textarea {
-    border: none;
-    outline: none;
-    resize: none;
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    background-color: transparent;
-}
+/* Style the custom checkbox */
 
 select {
     border: none;
@@ -138,7 +178,6 @@ body {
 
 main, header {
     width: 100%;
-    box-sizing: border-box;
 }
 
 main {
@@ -156,8 +195,6 @@ footer {
     margin: auto;
     max-width: 1920px;
     min-height: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
     display: flex;
     flex-direction: column;
     border: 1px solid blue;
@@ -173,15 +210,37 @@ footer {
 @media (min-width: 1550px) and (max-width: 1920px) {
     .container {
         max-width: 1920px;
-        padding-left: 20px;
-        padding-right: 20px;
     }
 }
 
 @media (max-width: 1550px) {
     .container {
         max-width: 95%;
-        padding-left: 15px;
-        padding-right: 15px;
     }
 }
+
+/* Медиазапросы для экранов 1200px и меньше */
+/*@media (max-width: 1200px) {*/
+/*    .settings_title_container h2 {*/
+/*        font-size: 24px; !* Уменьшение размера шрифта для лучшего отображения на меньших экранах *!*/
+/*        text-align: center; !* Центрирование заголовка для лучшего вида *!*/
+/*    }*/
+
+/*    .settings_nav_list {*/
+/*        gap: 10px; !* Уменьшение промежутков между элементами для более компактного вида *!*/
+/*        flex-wrap: wrap; !* Позволяет элементам переноситься на следующую строку, если не помещаются *!*/
+/*    }*/
+
+/*    .settings_nav_item {*/
+/*        width: 100px;*/
+/*        min-width: auto; */
+/*        padding: 10px; !* Добавление отступов для улучшения внешнего вида *!*/
+/*        font-size: 12px; !* Уменьшение размера шрифта для адаптации к меньшему экрану *!*/
+/*    }*/
+
+/*    .container {*/
+/*        max-width: 100%; !* Установка максимальной ширины контейнера на 100% *!*/
+/*        padding-left: 10px; !* Уменьшение отступов *!*/
+/*        padding-right: 10px; !* Уменьшение отступов *!*/
+/*    }*/
+/*}*/

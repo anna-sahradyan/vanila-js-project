@@ -1,14 +1,128 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Settings</title>
-</head>
-<body>
-<h1>this is settings page</h1>
-<script src="../index.js"></script>
-</body>
-</html>
+<div class="settings_container">
+    <div class="settings_title_container">
+        <h2>настройки / локации</h2>
+    </div>
+    <div class="settings_nav">
+        <ul class="settings_nav_list">
+            <li class="settings_nav_item">имущество</li>
+            <li class="settings_nav_item">инвентаризация</li>
+            <li class="settings_nav_item">сотрудники</li>
+            <li class="settings_nav_item">локации</li>
+            <li class="settings_nav_item">уведомления</li>
+            <li class="settings_nav_item">справочники</li>
+            <li class="settings_nav_item">пользователь</li>
+        </ul>
+    </div>
+    <div class="settings_table">
+        <div class="settings_title_sub">
+            <h2>Настройка полей таблицы</h2>
+        </div>
+        <div class="settings_table_nav">
+            <ul>
+                <li>Описание</li>
+                <li>Сортировка</li>
+                <li>ID</li>
+                <li>Тип поля</li>
+                <li>Выводить в таблицу</li>
+                <li>Обязательно</li>
+                <li>Удалить</li>
+            </ul>
+        </div>
+        <table class="main-table">
+            <tbody>
+            <tr>
+                <td><img src="/images/more.svg" alt="more">Название <img src="/images/edit.svg" alt="edit"> </td>
+                <td><div class="question"><img src="/images/question.svg" alt="question"></div></td>
+                <td>500</td>
+                <td>1001</td>
+                <td>Строка</td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><img src="/images/more.svg" alt="more">Цена<img src="/images/edit.svg" alt="edit"> </td>
+                <td><div class="question"><img src="/images/question.svg" alt="question"></div></td>
+                <td>510</td>
+                <td>1002</td>
+                <td>Число</td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+            </tr>
+            <tr>
+                <td><img src="/images/more.svg" alt="more">МОЛ<img src="/images/edit.svg" alt="edit"> </td>
+                <td><div class="question"><img src="/images/question.svg" alt="question"></div></td>
+                <td>520</td>
+                <td>1003</td>
+                <td class="file">Справочник <img src="/images/file.svg" alt="file" width="17" height="20" class="file"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+            </tr>
+          <tr>
+              <td><img src="/images/more.svg" alt="more">Фото<img src="/images/edit.svg" alt="edit"> </td>
+            <td><div class="question"><img src="/images/question.svg" alt="question"></div></td>
+            <td>530</td>
+            <td>1004</td>
+            <td>Файл</td>
+            <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+            <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+            <td><input type='checkbox'><div class="empty"></div></td>
+            </tr>
+            <tr>
+                <td><img src="/images/more.svg" alt="more">Цвет<img src="/images/edit.svg" alt="edit"> </td>
+                <td><div class="question"><img src="/images/question.svg" alt="question"></div></td>
+                <td>540</td>
+                <td>1005</td>
+                <td>Строка</td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><div class="empty"></div></td>
+            </tr>  <tr>
+               <tr>
+                <td><img src="/images/more.svg" alt="more">Локация<img src="/images/edit.svg" alt="edit"> </td>
+                <td><div class="question"><img src="/images/question.svg" alt="question"></div></td>
+                <td>550</td>
+                <td>1006</td>
+                <td class="file">Справочник <img src="/images/file.svg" alt="file" width="17" height="20" ></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><div class="empty"></div></td>
+            </tr>
+            <tr>
+                <td><img src="/images/more.svg" alt="more">Количество<img src="/images/edit.svg" alt="edit"> </td>
+                <td><div class="question"><img src="/images/question.svg" alt="question"></div></td>
+                <td>560</td>
+                <td>1007</td>
+                <td>Число</td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><div class="empty"></div></td>
+            </tr>  <tr>
+                <td><img src="/images/more.svg" alt="more">Цвет<img src="/images/edit.svg" alt="edit"> </td>
+                <td><div class="question"><img src="/images/question.svg" alt="question"></div></td>
+                <td>570</td>
+                <td>1008</td>
+                <td>Текст</td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><div class="empty"></div></td>
+            </tr>
+
+            <tr>
+                <td><img src="/images/more.svg" alt="more">Цвет<img src="/images/edit.svg" alt="edit"> </td>
+                <td><div class="question"><img src="/images/question.svg" alt="question"></div></td>
+                <td>580</td>
+                <td>1009</td>
+                <td>Число</td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><img src="/images/cackbox.svg" alt="checkbox" width="20px" height="20px"></td>
+                <td><input type='checkbox'><div class="empty"></div></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

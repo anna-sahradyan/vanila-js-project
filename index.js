@@ -32,7 +32,6 @@ class SpecialFooter extends HTMLElement {
 customElements.define('special-header', SpecialHeader);
 customElements.define('special-footer', SpecialFooter);
 /*main part routing*/
-
 document.addEventListener('DOMContentLoaded', () => {
     // Обработка кликов на ссылки
     document.querySelectorAll('a').forEach(link => {
