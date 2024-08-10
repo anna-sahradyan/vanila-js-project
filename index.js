@@ -1,43 +1,51 @@
 class SpecialHeader extends HTMLElement {
     connectedCallback() {
-        fetch(`/html/header.html`).then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`)
-            }
-            return response.text();
-        }).then(data => {
-            this.innerHTML = data;
-        }).catch(err => {
-            console.error('Error loading header:', err)
-        })
+        fetch(`/html/header.html`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                this.innerHTML = data;
+            })
+            .catch(err => {
+                console.error('Error loading header:', err);
+            });
     }
-
 }
 
 class SpecialFooter extends HTMLElement {
     connectedCallback() {
-        fetch(`/html/footer.html`).then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`)
-            }
-            return response.text();
-        }).then(data => {
-            this.innerHTML = data
-        }).catch(err => {
-            console.error('Error loading header:', err)
-        })
+        fetch(`/html/footer.html`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                this.innerHTML = data;
+                // Check if the footer needs updating
+                if (window.location.pathname.includes('settings.html')) {
+                    updateFooterForSettings();
+                }
+            })
+            .catch(err => {
+                console.error('Error loading footer:', err);
+            });
     }
 }
 
 customElements.define('special-header', SpecialHeader);
 customElements.define('special-footer', SpecialFooter);
-/*main part routing*/
+
+// Handling clicks on links and loading pages
 document.addEventListener('DOMContentLoaded', () => {
-    // Обработка кликов на ссылки
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
-
             const href = link.getAttribute('href');
             loadPage(href);
         });
@@ -48,7 +56,84 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.text())
             .then(html => {
                 document.querySelector('#main-page').innerHTML = html;
+                // Clear the footer before adding new content
+                const footer = document.querySelector('special-footer');
+                footer.innerHTML = ''; // Ensure the footer is cleared
+                if (url.includes('settings.html')) {
+                    updateFooterForSettings();
+                } else {
+                    loadDefaultFooter();
+                }
             })
             .catch(error => console.error('Error loading page:', error));
     }
+
+    function loadDefaultFooter() {
+        const footer = document.querySelector('special-footer');
+        footer.innerHTML = ''; // Clear the footer
+        fetch(`/html/footer.html`)
+            .then(response => response.text())
+            .then(data => {
+                footer.innerHTML = data;
+            })
+            .catch(err => console.error('Error loading default footer:', err));
+    }
+
+    function updateFooterForSettings() {
+        const footer = document.querySelector('special-footer');
+        footer.innerHTML = ''; // Clear the footer
+
+        const wrapperDiv = document.createElement('div');
+        wrapperDiv.classList.add('footer-wrapper');
+
+        const btnWrapper = document.createElement('span');
+        btnWrapper.classList.add('btn_box');
+
+        // Create button 1
+        const button1 = document.createElement('button');
+        button1.classList.add('footer_btn1');
+        const img = document.createElement('img');
+        img.src = '/images/save.svg';
+        img.alt = 'Save Icon';
+        button1.appendChild(img);
+        button1.appendChild(document.createTextNode('Сохранить'));
+
+        // Create button 2
+        const button2 = document.createElement('button');
+        button2.textContent = 'Отменить';
+        button2.classList.add('footer_btn2');
+
+        // Create text
+        const footerText = document.createElement('span');
+        footerText.textContent = 'ProfSostav 1996 - 2021';
+        footerText.classList.add('text2_footer');
+
+        // Add buttons and text to wrapper
+        wrapperDiv.appendChild(footerText);
+        btnWrapper.appendChild(button1);
+        btnWrapper.appendChild(button2);
+        wrapperDiv.appendChild(btnWrapper);
+
+        // Add wrapper to footer
+        footer.appendChild(wrapperDiv);
+
+        // Create documentation block
+        const footerDocDiv = document.createElement('div');
+        footerDocDiv.classList.add('footer_doc1');
+        const docImg = document.createElement('img');
+        docImg.src = '/images/footer_file.svg';
+        docImg.alt = 'doc';
+        docImg.width = 17;
+        docImg.height = 19;
+        const docLink = document.createElement('a');
+        docLink.href = '/';
+        docLink.textContent = 'Документация';
+        footerDocDiv.appendChild(docImg);
+        footerDocDiv.appendChild(docLink);
+        wrapperDiv.appendChild(footerDocDiv);
+    }
+
+    window.addEventListener('error', (event) => {
+        console.error('JavaScript error:', event.message);
+    });
 });

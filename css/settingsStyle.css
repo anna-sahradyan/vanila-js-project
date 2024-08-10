@@ -132,21 +132,23 @@ td img {
 
 tbody tr:nth-child(odd) {
     background-color: #ffffff;
-
-
-}
-.empty{
-    width: 20px;
-    height: 20px;
-    border: 1px solid var(--bs-orange);
-}
-.file{
-
 }
 tbody tr:nth-child(even) {
     background-color: rgb(244, 244, 244);
 
 }
+
+
+.empty {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--bs-orange);
+}
+
+.file {
+
+}
+
 
 .file {
     text-align: center;
@@ -155,6 +157,80 @@ tbody tr:nth-child(even) {
 .file img {
     vertical-align: middle; /* Center vertically if necessary */
 }
+
+.checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--bs-orange);
+    cursor: pointer;
+    background-color: transparent; /* Empty background when unchecked */
+}
+
+.checkbox:checked {
+    background-color: var(--bs-orange);
+}
+
+.checkbox::before {
+    content: '';
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translate(-50%, -50%);
+    background-image: url("/location/images/check.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.checkbox:checked::before {
+    display: block;
+}
+
+/*btn part*/
+.settings_add_btn {
+    margin-top: 18px;
+
+
+}
+
+.add_btn {
+    width: 255px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    background: var(--bs-indigo);
+    color:var(--bs-white) ;
+    text-transform: uppercase;
+    font-family: var(--font-light);
+    font-weight: 500;font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+}
+
+.add_btn img{
+margin: 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*@media (max-width: 768px) {*/
 /*    .settings_nav_list {*/
 /*        flex-direction: column;}*/
