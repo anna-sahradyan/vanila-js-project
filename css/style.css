@@ -15,6 +15,7 @@
     url('/location/fonts/montserrat-black.ttf') format('truetype');
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Montserrat';
     font-weight: 300;
@@ -23,6 +24,7 @@
     url('/location/fonts/montserrat-thin.woff2') format('woff2');
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Futura Cyrillic';
     font-weight: 300; /* Light */
@@ -31,6 +33,7 @@
     url('/location/fonts/FuturaCyrillicLight.ttf') format('truetype');
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Futura Cyrillic';
     font-weight: 500; /* Medium */
@@ -39,6 +42,7 @@
     url('/location/fonts/FuturaCyrillicMedium.ttf') format('truetype');
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Futura Cyrillic';
     font-weight: 700;/*bold*/
@@ -47,11 +51,13 @@
     url('/location/fonts/FuturaCyrillicBold.ttf') format('truetype');
     font-display: swap;
 }
+
 html, body {
     min-height: 100vh;
     box-sizing: border-box;
 
 }
+
 th {
     font-weight: normal;
     background: none;
@@ -82,9 +88,11 @@ tr {
     box-sizing: inherit;
     font-family: 'Montserrat', sans-serif;
 }
-img{
+
+img {
     display: inline-block;
 }
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #172139;
@@ -107,7 +115,7 @@ img{
     --bs-danger: #dc3545;
     --bs-light: #F4F4F4;
     --bs-dark: #343a40;
-    --bs-color:#A5A5A5;
+    --bs-color: #A5A5A5;
     --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -117,7 +125,6 @@ img{
     --font-thin: 'Montserrat', sans-serif;
 
 }
-
 
 
 select {
@@ -137,11 +144,9 @@ ul {
 }
 
 input {
-    background-color: transparent;
     border: none;
     outline: none;
-    color: transparent;
-    caret-color: transparent;
+
 }
 
 button {
@@ -155,8 +160,14 @@ a {
     color: inherit;
     display: inline-block;
 }
-img{
+
+img {
     display: inline-block;
+}
+
+input[type='checkbox']{
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 body {
     width: 100%;
@@ -193,10 +204,10 @@ footer {
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
+
 }
 
-/* Медиазапросы */
+/* @Media Query */
 @media (max-width: 1920px) {
     .container {
         max-width: 100%;
@@ -215,31 +226,6 @@ footer {
     }
 }
 
-/* Медиазапросы для экранов 1200px и меньше */
-/*@media (max-width: 1200px) {*/
-/*    .settings_title_container h2 {*/
-/*        font-size: 24px; !* Уменьшение размера шрифта для лучшего отображения на меньших экранах *!*/
-/*        text-align: center; !* Центрирование заголовка для лучшего вида *!*/
-/*    }*/
-
-/*    .settings_nav_list {*/
-/*        gap: 10px; !* Уменьшение промежутков между элементами для более компактного вида *!*/
-/*        flex-wrap: wrap; !* Позволяет элементам переноситься на следующую строку, если не помещаются *!*/
-/*    }*/
-
-/*    .settings_nav_item {*/
-/*        width: 100px;*/
-/*        min-width: auto; */
-/*        padding: 10px; !* Добавление отступов для улучшения внешнего вида *!*/
-/*        font-size: 12px; !* Уменьшение размера шрифта для адаптации к меньшему экрану *!*/
-/*    }*/
-
-/*    .container {*/
-/*        max-width: 100%; !* Установка максимальной ширины контейнера на 100% *!*/
-/*        padding-left: 10px; !* Уменьшение отступов *!*/
-/*        padding-right: 10px; !* Уменьшение отступов *!*/
-/*    }*/
-/*}*/
 footer button {
     margin-right: 10px;
     padding: 10px 20px;

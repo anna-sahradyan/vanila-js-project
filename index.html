@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Location</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/headerStyle.css">
     <link rel="stylesheet" href="/css/footerStyle.css">
     <link rel="stylesheet" href="/css/mainStyle.css">
     <link rel="stylesheet" href="/css/locationStyle.css">
     <link rel="stylesheet" href="/css/settingsStyle.css">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Location</title>
+    <link rel="stylesheet" href="/css/formStyle.css">
 </head>
 <body id="settings-page">
 <div class="container">
@@ -19,23 +20,69 @@
         <div class="main_container">
             <div class="sidebar">
                 <ul class="sidebar_list">
-                    <li class="sidebar_list_item item_li"><a href="/#"class="ajax-link"> <img src="/images/home.svg" alt="home"> Имущество</a></li>
-                    <li class="sidebar_list_item item_li"><a href="/#" class="ajax-link"> <img src="/images/employers.svg" alt="invent"> Инвентаризация</a></li>
-                    <li class="sidebar_list_item item_li"><a href="/#" class="ajax-link"> <img src="/images/employers.svg" alt="employers"> Сотрудники</a></li>
-                    <li class="sidebar_list_item item_li"><a href="/#" class="ajax-link"> <img src="/images/note.svg" alt="note"> Уведомления</a></li>
-                    <li class="sidebar_list_item item_li"><a href="/page/location.html" class="ajax-link" > <img src="/images/location.svg" alt="location"> Локации</a></li>
-                    <li class="sidebar_list_item item_li"><a href="/page/settings.html"class="ajax-link" > <img src="/images/settings.svg" alt="settings"> Настройки</a></li>
-                    <li class="sidebar_list_item_close"><a href="/page/close.html" class="ajax-link"> <img src="/images/arrow.svg" alt="close"> Скрыть меню</a></li>
+                    <li class="sidebar_list_item item_li"><a href="/#" class="ajax-link"><img src="/images/home.svg" alt="home"> Имущество</a></li>
+                    <li class="sidebar_list_item item_li"><a href="/#" class="ajax-link"><img src="/images/employers.svg" alt="invent"> Инвентаризация</a></li>
+                    <li class="sidebar_list_item item_li"><a href="/#" class="ajax-link"><img src="/images/employers.svg" alt="employers"> Сотрудники</a></li>
+                    <li class="sidebar_list_item item_li"><a href="/#" class="ajax-link"><img src="/images/note.svg" alt="note"> Уведомления</a></li>
+                    <li class="sidebar_list_item item_li"><a href="/page/location.html" class="ajax-link"><img src="/images/location.svg" alt="location"> Локации</a></li>
+                    <li class="sidebar_list_item item_li"><a href="/page/settings.html" class="ajax-link"><img src="/images/settings.svg" alt="settings"> Настройки</a></li>
+                    <li class="sidebar_list_item_close"><a href="/page/close.html" class="ajax-link"><img src="/images/arrow.svg" alt="close"> Скрыть меню</a></li>
                 </ul>
             </div>
             <div class="content" id="main-page">
-                <h1>hello home page</h1>
+                <div class="form_wrapper">
+                    <form id="myFormAdd">
+                        <div class="form_inner">
+                            <h2 class="title_form">Создать локацию</h2>
+                            <input type="text" placeholder="Название" class="form_input">
+                            <input type="text" placeholder="Штрихкод" class="form_input">
+                            <input type="text" placeholder="RFID" class="form_input">
+                            <select id="options" name="options" class="hidden_select form_input">
+                                <option value="Локация1">Локация1</option>
+                                <option value="Локация2">Локация2</option>
+                                <option value="Локация3">Локация3</option>
+                            </select>
+                            <div class="icon_select"><img src="/images/arrow.svg" alt="arrow" class="icon_sel"></div>
+                            <span class="check_box">Виртуальная локация<input type="checkbox"></span>
+                            <span class="check_box">Локация для утерь<input type="checkbox"></span>
+                            <div class="form_btns">
+                                <button class="form_btn_add"><img src="/images/save.svg" alt="save">Создать</button>
+                                <button class="form_btn" type="button" id="toggleFormAdd">Отменить</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="myFormCreate">
+                        <div class="form_inner">
+                            <h2 class="title_form">Изменить локацию %название%</h2>
+                            <label for="name">Название</label>
+                            <input type="text" placeholder="Локация 11" class="form_input" id="name">
+                            <label for="code">Штрихкод</label>
+                            <input type="text" placeholder="1123123123123" class="form_input" id="code">
+                            <label for="id">RFID</label>
+                            <input type="text" placeholder="RFID" class="form_input" id="id">
+                            <label for="sel">Локация</label>
+                            <select id="options_create" name="options_create" class="hidden_select form_input">
+                                <option value="Локация1">Локация1</option>
+                                <option value="Локация2">Локация2</option>
+                                <option value="Локация3">Локация3</option>
+                            </select>
+                            <div class="icon_sel_2"><img src="/images/arrow.svg" alt="arrow"></div>
+                            <span class="check_box">Виртуальная локация<input type="checkbox"></span>
+                            <span class="check_box">Локация для утерь<input type="checkbox"></span>
+                            <div class="form_btns_create">
+                                <button class="form_btn_delete" type="button">Удалить</button>
+                                <button class="form_btn_cancel" type="button">Отменить</button>
+                            </div>
+                            <button class="add_btn_create"><img src="/images/save.svg" alt="save">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
     <special-footer></special-footer>
 </div>
-
+<script src="/js/location.js"></script>
 <script src="/index.js"></script>
 </body>
 </html>

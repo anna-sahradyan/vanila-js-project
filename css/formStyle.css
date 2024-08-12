@@ -1,0 +1,233 @@
+
+.form_wrapper {
+    margin: 30px auto;
+    padding: 25px 15px;
+    width: 440px;
+    background-color: white;
+
+}
+
+
+#myFormCreate {
+    display: none;
+}
+
+label {
+    color: var(--bs-indigo);
+    font-family: var(--font-light);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0;
+    margin: 5px 0;
+}
+
+/*forms style*/
+.form_inner {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form_input {
+    padding: 15px;
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 5px;
+    background: rgb(245, 245, 245);
+    margin-bottom: 17px;
+}
+
+.title_form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: var(--font-light);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0;
+    margin-bottom: 17px;
+}
+
+/*select*/
+select {
+    position: relative;
+
+}
+
+select option {
+    color: var(--bs-indigo);
+    background-color: inherit;
+    padding: 10px;
+    font-size: 16px;
+
+}
+
+
+.icon_select {
+    position: absolute;
+    right: 25%;
+    top: 48.5%;
+    transform: rotate(-90deg);
+
+}
+
+.icon_sel_2 {
+    position: absolute;
+    right: 25%;
+    top: 51%;
+    transform: rotate(-90deg);
+}
+
+/*checkbox*/
+.check_box {
+    padding: 8px;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0;
+    justify-content: space-between;
+    margin-bottom: 27px;
+}
+
+/*buttons*/
+.form_btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.form_btn, .form_btn_add {
+    font-family: var(--font-light);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.form_btn {
+    border: 1px solid var(--bs-indigo);
+    width: 150px;
+}
+
+.form_btn_add {
+    background-color: var(--bs-indigo);
+    color: var(--bs-white);
+    width: 190px;
+    gap: 5px;
+}
+
+/*second btn*/
+.form_btns_create {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form_btn_cancel, .form_btn_delete {
+    color: var(--bs-indigo);
+    font-family: var(--font-light);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 1px solid var(--bs-indigo);
+    padding: 10px;
+}
+
+.form_btn_cancel {
+    width: 150px;
+}
+
+.form_btn_delete {
+    width: 195px;
+}
+
+.add_btn_create {
+    margin-top: 17px;
+    background-color: var(--bs-indigo);
+    color: var(--bs-white);
+    letter-spacing: 0.1em;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.add_btn_create img {
+    margin: 0 5px;
+}
+
+.form_btn_delete {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.form_btn_delete::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    background-color: rgb(255, 89, 89);
+    mask: url('/location/images/delete.svg') no-repeat;
+    -webkit-mask: url('/location/images/delete.svg') no-repeat;
+    background-size: contain;
+
+}
+
+/*checkbox**/
+.check_box input {
+    position: relative;
+    width: 52px;
+    height: 24px;
+    background-color: rgb(239, 239, 239);
+    border-radius: 53px;
+    transition: .5s;
+
+}
+
+.check_box input:checked {
+    background-color: rgb(239, 239, 239);
+}
+
+.check_box input::before {
+    content: " ";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    top: 0;
+    left: 0;
+    background-color: var(--bs-orange);
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+
+}
+
+.check_box input:checked[type='checkbox']::before {
+    left: 24px;
+}

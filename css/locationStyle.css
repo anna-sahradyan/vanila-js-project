@@ -1,0 +1,325 @@
+/* General Container Styling */
+.location_container {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid black;
+    min-height: 100vh;
+    position: relative;
+}
+.location_btn_box {
+    margin-top: 30px;
+    display: flex;
+    position: relative;
+    /*cursor: url("/location/images/pointer.svg"), auto;*/
+    cursor: pointer;
+}
+
+.location_btn {
+    position: relative;
+    width: 286px;
+    padding: 10px;
+    background: var(--bs-indigo);
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* Title Styling */
+.location_title_container h2 {
+    font-family: var(--font-light);
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1; /* Changed from 100% for better readability */
+    letter-spacing: 0;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation Styling */
+.location_nav {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.location_nav_list {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.location_nav_item {
+    background-color: var(--bs-white);
+    font-family: var(--font-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 40px;
+    font-weight: 600;
+    color: var(--bs-indigo);
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.location_nav_item:hover {
+    background-color: var(--bs-indigo);
+    color: var(--bs-white);
+}
+
+/* Button Styling */
+.nav_btn {
+    font-family: var(--font-light);
+    width: 336px;
+    padding: 10px;
+    font-weight: 500;
+    line-height: 18px;
+    border-radius: 5px;
+    background: var(--bs-indigo);
+    color: var(--bs-white);
+    font-size: 14px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.nav_btn_span {
+    font-size: 10px;
+}
+
+/* Input Part of Location */
+
+
+.location_input_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    gap: 10px;
+}
+
+.input_text {
+    color: rgb(0, 0, 0);
+    font-family: var(--font-medium);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+}
+
+.search_input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search_input input {
+    width: 300px;
+    padding: 10px 40px 10px 10px;
+    border-radius: 5px;
+}
+
+.search_input img {
+    position: absolute;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(174, 174, 174);
+    mask: url('/location/images/loop.svg') no-repeat center;
+    -webkit-mask: url('/location/images/loop.svg') no-repeat center;
+    background-size: contain;
+    transition: background-color 0.3s ease;
+}
+
+.search_input input::placeholder {
+    position: absolute;
+    margin-left: 30px;
+}
+
+.search_input input:focus + img {
+    background-color: var(--bs-indigo);
+}
+
+/* Checkbox Styling */
+.location_checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--bs-orange);
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.location_checkbox:checked {
+    background-color: var(--bs-orange);
+    background-image: url("/location/images/check.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.location_checkbox::before {
+    content: '';
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    background-image: url("/location/images/check.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.location_checkbox:checked::before {
+    display: block;
+}
+
+/* Dropdown Menu */
+
+.top_menu {
+    min-width: 600px;
+}
+
+.top_menu ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.top_menu ul li {
+    position: relative;
+    margin-right: 15px;
+    width: max-content;
+}
+
+.top_menu ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.top_menu ul li a:hover {
+    cursor: pointer;
+}
+
+/* Style for sub menu */
+.top_menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    z-index: 1000;
+    list-style: none;
+}
+
+
+.top_menu ul li:hover > ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top_menu ul li ul li {
+    position: relative;
+}
+
+.top_menu ul li ul li ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    padding: 10px;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+
+.top_menu ul li ul li:hover > ul {
+    display: flex;
+}
+
+
+.top_menu ul li ul li ul.s {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    padding: 10px;
+    z-index: 1000;
+    flex-direction: row;
+}
+
+.top_menu ul li ul li:hover > ul.s {
+    display: flex;
+}
+
+/* style .edit и .delete */
+.edit {
+    color: var(--bs-orange);
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+.more {
+    margin: 0 5px;
+}
+
+.delete {
+    color: rgb(255, 89, 89);
+    font-family: var(--font-thin);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+}
+
+.delete::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    background-color: rgb(255, 89, 89);
+    mask: url('/location/images/delete.svg') no-repeat;
+    -webkit-mask: url('/location/images/delete.svg') no-repeat;
+    background-size: contain;
+}
+
+.num {
+    color: var(--bs-orange);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0;
+    margin-left: 10px;
+}
+

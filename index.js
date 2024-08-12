@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnWrapper = document.createElement('span');
         btnWrapper.classList.add('btn_box');
 
-        // Create button 1
         const button1 = document.createElement('button');
         button1.classList.add('footer_btn1');
         const img = document.createElement('img');
@@ -98,26 +97,22 @@ document.addEventListener('DOMContentLoaded', () => {
         button1.appendChild(img);
         button1.appendChild(document.createTextNode('Сохранить'));
 
-        // Create button 2
         const button2 = document.createElement('button');
         button2.textContent = 'Отменить';
         button2.classList.add('footer_btn2');
 
-        // Create text
         const footerText = document.createElement('span');
         footerText.textContent = 'ProfSostav 1996 - 2021';
         footerText.classList.add('text2_footer');
 
-        // Add buttons and text to wrapper
         wrapperDiv.appendChild(footerText);
         btnWrapper.appendChild(button1);
         btnWrapper.appendChild(button2);
         wrapperDiv.appendChild(btnWrapper);
 
-        // Add wrapper to footer
         footer.appendChild(wrapperDiv);
 
-        // Create documentation block
+
         const footerDocDiv = document.createElement('div');
         footerDocDiv.classList.add('footer_doc1');
         const docImg = document.createElement('img');
@@ -135,5 +130,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('error', (event) => {
         console.error('JavaScript error:', event.message);
+    });
+});
+/*forms*/
+document.addEventListener('DOMContentLoaded', function() {
+    const formAdd = document.getElementById('myFormAdd');
+    const formCreate = document.getElementById('myFormCreate');
+
+
+    const btnCreate = document.querySelector('.form_btn_add');
+    btnCreate.addEventListener('click', function(event) {
+        event.preventDefault();
+        formAdd.style.display = 'none';
+        formCreate.style.display = 'block';
+    });
+    const btnCancel = document.querySelector('.form_btn_cancel');
+    btnCancel.addEventListener('click', function(event) {
+        event.preventDefault();
+        formCreate.style.display = 'none';
+        formAdd.style.display = 'block';
+    });
+
+    const btnDelete = document.querySelector('.form_btn_delete');
+    btnDelete.addEventListener('click', function(event) {
+        event.preventDefault();
+        formCreate.style.display = 'none';
+        formAdd.style.display = 'block';
     });
 });
